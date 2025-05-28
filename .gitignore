@@ -4,7 +4,7 @@ npm-debug.log
 package-lock.json
 
 # Compilados de Angular/Ionic
-www/
+#www/
 dist/
 build/
 tmp/

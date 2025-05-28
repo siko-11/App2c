@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Clientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="principal"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="servG.irA('/cliente/'+0)">
+        <ion-icon slot="start" name="add"></ion-icon>
+        NEW
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item-sliding *ngFor="let cliente of listaclientes"#ionItemsliding>
+      <ion-item>
+        <ion-label>
+          <h2>NOMBRES: {{cliente.cli_nombre}}</h2>
+          <p>CEDULA: {{cliente.cli_identificacion}}</p>
+          <p>TELEFONO : {{cliente.cli_telefono}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option color="primary" (click)="fun_editar(cliente.cli_id,ionItemsliding)">
+          <ion-icon slot="start" name="create"></ion-icon>EDITAR
+        </ion-item-option>
+        <ion-item-option color="success" (click)="fun_eliminar(cliente,ionItemsliding)">
+          <ion-icon slot="start" name="trash"></ion-icon>ELIMINAR
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

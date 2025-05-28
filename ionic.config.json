@@ -1,0 +1,7 @@
+{
+  "name": "App2c",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

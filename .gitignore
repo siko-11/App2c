@@ -1,0 +1,33 @@
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Compilados de Angular/Ionic
+www/
+dist/
+build/
+tmp/
+temp/
+
+# Configuraciones del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos del entorno de desarrollo
+.env
+.env.local
+.env.*.local
+
+# Archivos de Vercel (excepto vercel.json si lo usas)
+.vercel/
+
+# Archivos de IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Test coverage
+coverage/

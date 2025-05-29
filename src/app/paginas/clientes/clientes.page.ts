@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import{AlertController,IonicModule} from '@ionic/angular'
+import { AlertController,IonContent, IonHeader, IonTitle, IonToolbar,IonButtons,IonBackButton, IonIcon,IonButton,
+  IonList,IonItemSliding,IonItemOptions,IonItemOption,IonItem,IonLabel,LoadingController
+ } from '@ionic/angular/standalone';
+
 import { ClientesService } from 'src/app/servicios/clientes.service';
-import {LoadingController,IonItemSliding} from '@ionic/angular'
 import { GeneralService } from 'src/app/servicios/general.service';
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.page.html',
   styleUrls: ['./clientes.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonIcon, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonButtons,IonBackButton,IonButton,
+    IonList,IonItemSliding,IonItemOptions,IonItemOption,IonItem,IonLabel
+   ]
 })
 export class ClientesPage implements OnInit {
   objetoRespuesta:any;

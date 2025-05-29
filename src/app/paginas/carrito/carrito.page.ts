@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, NavController } from '@ionic/angular';
+import {  NavController, IonHeader, IonButtons,IonToolbar,IonTitle,IonBackButton,IonContent,IonList,
+  IonItem,IonThumbnail,IonLabel,IonButton,IonBadge,IonIcon,IonCard,IonCardContent
+} from '@ionic/angular/standalone';
 import { GeneralService } from 'src/app/servicios/general.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,7 +12,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './carrito.page.html',
   styleUrls: ['./carrito.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonButtons, IonHeader,  CommonModule, FormsModule,IonToolbar,IonTitle,IonBackButton,IonContent,IonList,
+    IonItem,IonThumbnail,IonLabel,IonButton,IonBadge,IonIcon,IonCard,IonCardContent
+  ]
 })
 export class CarritoPage implements OnInit {
   carrito: any[] = [];

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, LoadingController, NavController } from '@ionic/angular';
+import { LoadingController, NavController, IonHeader,IonToolbar,IonTitle,IonButtons,IonBackButton,IonButton,
+  IonIcon,IonBadge,IonContent,IonGrid,IonRow,IonCol,IonCard,IonCardHeader,IonCardContent, IonCardSubtitle,IonCardTitle, IonSearchbar } from '@ionic/angular/standalone';
 import { CatalogoService } from 'src/app/servicios/catalogo.service';
 import { GeneralService } from 'src/app/servicios/general.service';
 
@@ -10,7 +11,9 @@ import { GeneralService } from 'src/app/servicios/general.service';
   templateUrl: './catalogo.page.html',
   styleUrls: ['./catalogo.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonSearchbar, IonCardSubtitle, IonHeader,  CommonModule, FormsModule,IonToolbar,IonTitle,IonButtons,IonBackButton,IonButton,
+    IonIcon,IonBadge,IonContent,IonGrid,IonRow,IonCol,IonCard,IonCardHeader,IonCardContent,IonCardTitle
+  ]
 })
 export class CatalogoPage implements OnInit {
   listaproductos: any[] = [];
@@ -89,4 +92,9 @@ export class CatalogoPage implements OnInit {
   irAlCarrito() {
     this.navCtrl.navigateForward('/carrito');
   }
+  actualizarTextoBuscar(event: any) {
+  this.textoBuscar = event.detail.value || '';
+  this.filtrarProductos();
+}
+
 }

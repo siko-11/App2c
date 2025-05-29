@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {LoadingController,IonicModule} from '@ionic/angular'
+import {IonContent, IonHeader, IonTitle, IonToolbar,IonButtons,IonBackButton,IonButton,
+  IonList,IonItem,IonLabel,LoadingController,IonInput,IonCheckbox } from '@ionic/angular/standalone'
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from 'src/app/servicios/clientes.service';
 import { GeneralService } from 'src/app/servicios/general.service';
@@ -10,7 +11,8 @@ import { GeneralService } from 'src/app/servicios/general.service';
   templateUrl: './cliente.page.html',
   styleUrls: ['./cliente.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [CommonModule,FormsModule,IonContent, IonHeader, IonTitle, IonToolbar,IonButtons,IonBackButton,IonButton,
+  IonList,IonItem,IonLabel,IonInput,IonCheckbox]
 })
 export class ClientePage implements OnInit {
   id:number=0;

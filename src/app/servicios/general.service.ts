@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular/standalone';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +14,8 @@ urlimg:string="";
           this.URLSERV="http://localhost:3000/api/";
           this.urlimg="http://localhost:3000";
       }else{
-        this.URLSERV="https://app-api-xyvjti-c45763-95-216-145-249.traefik.me/";
+        this.URLSERV="https://app-api-xyvjti-c45763-95-216-145-249.traefik.me/api/";
+        this.urlimg = "https://app-api-xyvjti-c45763-95-216-145-249.traefik.me";
       }
     }
     //funciones generales

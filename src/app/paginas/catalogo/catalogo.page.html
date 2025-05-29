@@ -14,7 +14,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar [(ngModel)]="textoBuscar" placeholder="Buscar producto..." (ionInput)="filtrarProductos()"></ion-searchbar>
+  <ion-searchbar [value]="textoBuscar" placeholder="Buscar producto..." (ionInput)="actualizarTextoBuscar($event)">
+</ion-searchbar>
+
 
   <ion-grid>
     <ion-row>

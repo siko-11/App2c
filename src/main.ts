@@ -19,7 +19,8 @@ body,
 calculator,
 add,
 create,
-trash
+trash,
+cartOutline
 }from 'ionicons/icons';
 import { provideHttpClient } from '@angular/common/http';
 addIcons({
@@ -35,7 +36,8 @@ addIcons({
  'calculator':calculator,
  'add':add,
  'create':create,
- 'trash':trash
+ 'trash':trash,
+ 'cart-outline':cartOutline
 });
 //fin agregar iconos
 

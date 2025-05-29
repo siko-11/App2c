@@ -1,28 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Catalogo</ion-title>
-        <ion-buttons slot="start">
+    <ion-title>Catálogo</ion-title>
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="principal"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="irAlCarrito()">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge *ngIf="cantidadCarrito > 0" color="danger">{{ cantidadCarrito }}</ion-badge>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-   
-     <ion-card *ngFor="let objProducto of listaproductos">
-      <div>
-        <img [src]="servG.imagenUrl(objProducto.prod_imagen)" alt="">
-      </div>
-      <ion-card-header>
-        <ion-card-title>{{objProducto.prod_nombre}}</ion-card-title>
-        <ion-card-subtitle>CODIGO:{{objProducto.prod_codigo}}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <p><strong>Precio:</strong>${{objProducto.prod_precio}}</p>
-        <p><strong>Stock:</strong>${{objProducto.prod_stock}}</p>
-      </ion-card-content>
-    </ion-card>
-    
-  </ion-list>
+  <ion-searchbar [(ngModel)]="textoBuscar" placeholder="Buscar producto..." (ionInput)="filtrarProductos()"></ion-searchbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let objProducto of productosFiltrados">
+        <ion-card>
+          <img [src]="servG.imagenUrl(objProducto.prod_imagen)" alt="" style="width: 100%; height: auto;">
+          <ion-card-header>
+            <ion-card-title>{{ objProducto.prod_nombre }}</ion-card-title>
+            <ion-card-subtitle>Código: {{ objProducto.prod_codigo }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Precio:</strong> ${{ objProducto.prod_precio }}</p>
+            <p><strong>Stock:</strong> {{ objProducto.prod_stock }}</p>
+            <ion-button expand="full" color="primary" (click)="agregarAlCarrito(objProducto)">
+              Agregar al carrito
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

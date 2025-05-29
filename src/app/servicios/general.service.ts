@@ -5,7 +5,7 @@ import { ToastController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class GeneralService {
-public proceso: number = 1; //1:local 2:web
+public proceso: number = 2; //1:local 2:web
 public URLSERV:string ="";
 urlimg:string="";
   constructor( private router:Router,
@@ -14,8 +14,7 @@ urlimg:string="";
           this.URLSERV="http://localhost:3000/api/";
           this.urlimg="http://localhost:3000";
       }else{
-        this.URLSERV="http://192.168.1.1:3000/API/";
-        this.urlimg="http://localhost:3000";
+        this.URLSERV="https://app-api-xyvjti-c45763-95-216-145-249.traefik.me/";
       }
     }
     //funciones generales
